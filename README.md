@@ -1,39 +1,43 @@
 # Development-Project
-Super 30 game
+Attendance Tracker
 
-This is a simple Python program that allows you to play a number game against a computer. The goal of the game is to reach the number 30 without crossing it. Players take turns entering a sequence of consecutive numbers, and the player who reaches 30 without crossing it wins the game.
+This Python script is designed to automate the process of tracking and reminding students and staff about attendance in different subjects. It reads attendance data from an Excel sheet, allows you to input attendance information, and sends reminder emails to students and staff when students have low attendance or have exceeded the allowed number of leaves.
 
-## How to Play
+Prerequisites
 
-1. Run the program using Python.
+Before using this script, ensure you have the following dependencies installed:
 
-2. You will be prompted to choose whether you want to play the game or quit. Type "Yes" to play or "No" to quit.
+openpyxl: A library for working with Excel files. You can install it using pip:
+pip install openpyxl
 
-3. If you choose to play, you will have two options: to take the first chance or the second chance.
+smtplib: A library for sending email messages. No additional installation is required for this as it's a part of Python's standard library.
 
-4. If you choose the first chance, you will start by entering a sequence of consecutive numbers, and then the computer will play. If you choose the second chance, the computer will start, and you will enter numbers after the computer's turn.
+Usage
 
-5. The game continues until one of the players reaches the number 30 without crossing it. If you cross 30, you lose the game.
+1. Clone this repository or download the Python script.
 
-6. The game will display the results, and you can choose to play again or quit.
+2. Update the staff email addresses in the staff_mails list:
 
-## Game Rules
+staff_mails = ['485@gmail.com', 'yyyyyyyy@gmail.com']
+Replace the example email addresses with the actual email addresses of the staff members who should receive attendance reports.
 
-- Players take turns entering consecutive numbers.
-- You can enter 1 to 3 consecutive numbers in each turn.
-- The computer calculates its moves based on your input to make the game competitive.
-- The first player to reach 30 without crossing it wins.
+3. Execute the script:
+python Attendance.py
 
-## How to Run
+4. Follow the on-screen instructions to input attendance information. You will be prompted to enter the subject code and the number of absentees. If there is more than one absentee, you will be asked to input their roll numbers. The script will then update the attendance data in the Excel sheet and send reminder emails if necessary.
 
-Make sure you have Python installed on your system. You can run the game by executing the `Super30.py` script.
+5. You can continue to input attendance information for different subjects by responding to the prompt at the end of each subject's input.
 
-```bash
-python Super30.py
-```
+6. When you are done, type 0 to exit the script.
 
-## Author
+Configuration
 
-This game was created by Ruchitha P.
+The script uses Gmail for sending emails. You need to provide your Gmail credentials (your email and password) in the mailstu and mailstaff functions:
 
-Feel free to modify and enhance the game as you like. Have fun playing!
+from_id = '1234@gmail.com'
+pwd = 'tdbiwbj485'
+
+Replace 'crazygirlaks@gmail.com' with your Gmail email address and 'ERAkshaya485' with your email password. Be cautious with your credentials, and consider using app passwords for added security.
+
+
+
